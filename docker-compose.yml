@@ -57,7 +57,7 @@ services:
     environment:
       - SPARK_MASTER=spark://spark-master:7077
 
-spark-worker5:
+  spark-worker5:
     build:
       context: ./worker
       dockerfile: Dockerfile

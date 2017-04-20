@@ -4,9 +4,9 @@ MAINTAINER zixuan <livehl@126.com>
 
 
 # Copy shell files
-COPY wait-for-step.sh /
-COPY execute-step.sh /
-COPY finish-step.sh /
+#COPY wait-for-step.sh /
+#COPY execute-step.sh /
+#COPY finish-step.sh /
 
 
 # Install system tools

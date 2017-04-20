@@ -57,7 +57,7 @@ services:
     environment:
       - SPARK_MASTER=spark://spark-master:7077
 
-spark-worker1:
+spark-worker5:
     build:
       context: ./worker
       dockerfile: Dockerfile
@@ -68,7 +68,7 @@ spark-worker1:
     environment:
       - SPARK_MASTER=spark://spark-master:7077
 
-  spark-worker2:
+  spark-worker6:
     build:
       context: ./worker
       dockerfile: Dockerfile
@@ -78,7 +78,7 @@ spark-worker1:
       - spark-master
     environment:
       - SPARK_MASTER=spark://spark-master:7077
-  spark-worker3:
+  spark-worker7:
     build:
       context: ./worker
       dockerfile: Dockerfile
@@ -89,7 +89,7 @@ spark-worker1:
     environment:
       - SPARK_MASTER=spark://spark-master:7077
 
-  spark-worker4:
+  spark-worker8:
     build:
       context: ./worker
       dockerfile: Dockerfile
@@ -100,7 +100,7 @@ spark-worker1:
     environment:
       - SPARK_MASTER=spark://spark-master:7077
 
-  spark-worker3:
+  spark-worker9:
     build:
       context: ./worker
       dockerfile: Dockerfile
@@ -111,7 +111,7 @@ spark-worker1:
     environment:
       - SPARK_MASTER=spark://spark-master:7077
 
-  spark-worker4:
+  spark-worker10:
     build:
       context: ./worker
       dockerfile: Dockerfile

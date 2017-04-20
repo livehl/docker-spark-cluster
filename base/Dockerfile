@@ -1,6 +1,6 @@
 FROM centos:7
 
-MAINTAINER RavenZZ <raven.zhu@outlook.com>
+MAINTAINER zixuan <livehl@126.com>
 
 
 # Copy shell files
@@ -19,7 +19,7 @@ RUN yum clean all
 ENV JDK_VERSION 8u11
 ENV JDK_BUILD_VERSION b12
 #RUN curl -LO "http://download.oracle.com/otn-pub/java/jdk/$JDK_VERSION-$JDK_BUILD_VERSION/jdk-$JDK_VERSION-linux-x64.rpm" -H 'Cookie: oraclelicense=accept-securebackup-cookie' && rpm -i jdk-$JDK_VERSION-linux-x64.rpm; rm -f jdk-$JDK_VERSION-linux-x64.rpm;
-RUN curl -LO "http://172.17.10.164:54321/jdk-8u11-linux-x64.rpm" && rpm -i jdk-$JDK_VERSION-linux-x64.rpm; rm -f jdk-$JDK_VERSION-linux-x64.rpm;
+RUN curl -LO "http://c.m.cn:54321/jdk-8u11-linux-x64.rpm" && rpm -i jdk-$JDK_VERSION-linux-x64.rpm; rm -f jdk-$JDK_VERSION-linux-x64.rpm;
 ENV JAVA_HOME /usr/java/default
 RUN yum remove curl;  yum clean all
 
@@ -33,11 +33,11 @@ WORKDIR spark
 
 
 RUN \
-    curl -LO 'http://172.17.10.164:54321/spark-2.1.0-bin-hadoop2.7.tgz' && \
-    tar zxf spark-2.1.0-bin-hadoop2.7.tgz
+    curl -LO 'http://c.m.cn:54321/spark-2.1.0-bin-hadoop2.7.tgz' && \
+    tar zxf spark-2.1.0-bin-hadoop2.7.tgz -C /spark
 
 RUN rm -rf spark-2.1.0-bin-hadoop2.7.tgz
-RUN mv spark-2.1.0-bin-hadoop2.7/* ./
+#RUN mv spark-2.1.0-bin-hadoop2.7/* ./
 
 # ENV R_HOME /usr/lib/R
 # RUN ./R/install-dev.sh

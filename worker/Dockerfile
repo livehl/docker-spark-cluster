@@ -1,6 +1,6 @@
-FROM ravenzz/spark-hadoop
+FROM livehl/spark-hadoop
 
-MAINTAINER RavenZZ <raven.zhu@outlook.com>
+MAINTAINER zixuan <livehl@126.com>
 
 COPY worker.sh /
 

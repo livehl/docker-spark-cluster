@@ -10,7 +10,7 @@ services:
     ports:
       - "50001:6066"
       - "50002:7077"   # SPARK_MASTER_PORT
-      - "50003:8080"   # SPARK_MASTER_WEBUI_PORT
+      - "100:8080"   # SPARK_MASTER_WEBUI_PORT
     expose:
       - 7077
 
@@ -19,7 +19,7 @@ services:
       context: ./worker
       dockerfile: Dockerfile
     ports:
-      - "50004:8081"
+      - "40001:8081"
     links:
       - spark-master
     environment:
@@ -30,7 +30,93 @@ services:
       context: ./worker
       dockerfile: Dockerfile
     ports:
-      - "50005:8081"
+      - "40002:8081"
+    links:
+      - spark-master
+    environment:
+      - SPARK_MASTER=spark://spark-master:7077
+  spark-worker3:
+    build:
+      context: ./worker
+      dockerfile: Dockerfile
+    ports:
+      - "40003:8081"
+    links:
+      - spark-master
+    environment:
+      - SPARK_MASTER=spark://spark-master:7077
+
+  spark-worker4:
+    build:
+      context: ./worker
+      dockerfile: Dockerfile
+    ports:
+      - "40004:8081"
+    links:
+      - spark-master
+    environment:
+      - SPARK_MASTER=spark://spark-master:7077
+
+spark-worker1:
+    build:
+      context: ./worker
+      dockerfile: Dockerfile
+    ports:
+      - "40005:8081"
+    links:
+      - spark-master
+    environment:
+      - SPARK_MASTER=spark://spark-master:7077
+
+  spark-worker2:
+    build:
+      context: ./worker
+      dockerfile: Dockerfile
+    ports:
+      - "40006:8081"
+    links:
+      - spark-master
+    environment:
+      - SPARK_MASTER=spark://spark-master:7077
+  spark-worker3:
+    build:
+      context: ./worker
+      dockerfile: Dockerfile
+    ports:
+      - "40007:8081"
+    links:
+      - spark-master
+    environment:
+      - SPARK_MASTER=spark://spark-master:7077
+
+  spark-worker4:
+    build:
+      context: ./worker
+      dockerfile: Dockerfile
+    ports:
+      - "40008:8081"
+    links:
+      - spark-master
+    environment:
+      - SPARK_MASTER=spark://spark-master:7077
+
+  spark-worker3:
+    build:
+      context: ./worker
+      dockerfile: Dockerfile
+    ports:
+      - "40009:8081"
+    links:
+      - spark-master
+    environment:
+      - SPARK_MASTER=spark://spark-master:7077
+
+  spark-worker4:
+    build:
+      context: ./worker
+      dockerfile: Dockerfile
+    ports:
+      - "40010:8081"
     links:
       - spark-master
     environment:
